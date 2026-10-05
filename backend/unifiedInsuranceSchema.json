@@ -1,0 +1,387 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance-broker/schemas/customer-profile.json",
+  "title": "Insurance Customer Profile",
+  "type": "object",
+  "required": [
+    "customer_id",
+    "customer_type",
+    "business_details",
+    "property_details",
+    "vehicle_details",
+    "financial_details",
+    "people_details",
+    "operations",
+    "declared_assets",
+    "supporting_documents"
+  ],
+  "properties": {
+    "customer_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "customer_type": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "Personal",
+        "Commercial",
+        "High Net Worth",
+        "Landlord",
+        "Mixed",
+        null
+      ]
+    },
+    "business_details": {
+      "type": "object",
+      "properties": {
+        "business_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "industry": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "business_activity": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "legal_structure": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "years_operating": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "employee_count": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "annual_turnover": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "countries_of_operation": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "export_countries": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "import_countries": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "property_details": {
+      "type": "object",
+      "properties": {
+        "property_type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "property_value": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "rebuild_cost": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "occupancy_type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "construction_type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "locations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "security_features": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "vehicle_details": {
+      "type": "object",
+      "properties": {
+        "vehicle_count": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "vehicle_types": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "fleet_use": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "financial_details": {
+      "type": "object",
+      "properties": {
+        "annual_revenue": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "annual_payroll": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "stock_value": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "contents_value": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "sum_insured": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "currency": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "people_details": {
+      "type": "object",
+      "properties": {
+        "employee_count": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "domestic_staff": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "role": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "role"
+            ]
+          }
+        },
+        "key_personnel": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "position": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "directors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "operations": {
+      "type": "object",
+      "properties": {
+        "business_activities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "exports": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "imports": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "hazardous_materials": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "contractors_used": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "public_visitors": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "cyber_exposure": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      }
+    },
+    "declared_assets": {
+      "type": "object",
+      "properties": {
+        "valuable_items": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "artwork": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "jewellery": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "machinery": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "equipment": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "stock": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "supporting_documents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "document_type": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "document_name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "document_reference": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
